@@ -25,6 +25,7 @@ contains the answer.
 **Why this target:**
 <!-- e.g. "One of my questions is about a topic only two documents mention, so
      I expect that one to be hard." -->
+I expect the model to be confused when asked with different keywords rather than those in the corpus.
 
 ---
 
@@ -33,9 +34,8 @@ contains the answer.
 Every answer the system produces names at least one source document.
 
 **Why this target:**
-<!-- Why all five and not four? What about your setup makes that achievable —
-     or what would have to go wrong for it not to be? -->
 
+This makes the model grounded within the corpus which is the whole point of RAG.
 ---
 
 ## 3. The relevance gate stops out-of-corpus questions
@@ -52,6 +52,7 @@ in at least 4 of 5 tries.
 **Why this target:**
 <!-- What did your distances look like when you set the cutoff in Milestone 4?
      Was there a clean gap, or did the two groups overlap? -->
+The model should not answer what is not there on Corpus or else it is just hallucinating.
 
 ---
 
@@ -69,15 +70,17 @@ in at least 4 of 5 tries.
        - "No chunk is shorter than 200 characters, since anything below that
           in my corpus turned out to be a heading with no content under it." -->
 
+The chunk and the overlap has a sync of 100 characters. This leads to chunks not cut-off.
 
 
 **Why this target:**
 
+Relevant chunks lead to relevant answers. Cut off chunks would only get the model to answer the question incorrectly.
 
 
 ---
 
-## 5. Your choice
+## 5. Semantically identical queries
 
 <!-- YOU WRITE THIS ONE TOO.
 
@@ -87,9 +90,10 @@ in at least 4 of 5 tries.
      present — anything, as long as it names a number or an observable
      outcome. -->
 
-
+When I ask the model 2 semantically identical queries, the model returns the same answer.
 
 **Why this target:**
+The earlier models would be confused with same keywords being used in different context even though semantical context was different. I expect the model to handle such situations well.
 
 
 
