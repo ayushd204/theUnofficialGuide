@@ -26,6 +26,8 @@
      this repo.
 
      Milestone 5. -->
+     
+This project is a question-answering guide to campus life, built from 88 short student posts. It answers specific questions about dining, housing, courses, study spaces, and campus rules—for example, when to visit a dining hall, what a course workload is like, or whether a dorm has quiet hours. The system splits the posts into chunks, finds the ones most relevant to a question, and uses them to generate an answer with sources. If the retrieved information is not relevant enough, it refuses to answer.
 
 ## Chunking Strategy
 
