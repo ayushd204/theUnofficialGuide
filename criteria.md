@@ -4,13 +4,13 @@ Five criteria that say what "working" means for this system, written in unit 1
 **before** any results existed.
 
 An acceptance criterion names a target: a number, a count, a rate, or something
-a person could plainly observe. *"Retrieval works"* is an opinion. *"For at
+a person could plainly observe. _"Retrieval works"_ is an opinion. _"For at
 least 4 of my 5 test questions, the top results include a chunk containing the
-answer"* is a criterion.
+answer"_ is a criterion.
 
 Under each one, write a sentence or two on **why that target** and not a
 stricter or looser one. A reason that says something about your corpus or your
-pipeline earns credit; *"80% seemed reasonable"* does not.
+pipeline earns credit; _"80% seemed reasonable"_ does not.
 
 > Missing your own targets next unit costs you nothing. Setting a target so
 > easy you can't miss it does.
@@ -23,8 +23,10 @@ For at least 4 of my 5 test questions, the retrieved chunks include one that
 contains the answer.
 
 **Why this target:**
+
 <!-- e.g. "One of my questions is about a topic only two documents mention, so
      I expect that one to be hard." -->
+
 I expect the model to be confused when asked with different keywords rather than those in the corpus.
 
 ---
@@ -35,8 +37,7 @@ Every answer the system produces names at least one source document.
 
 **Why this target:**
 
-This makes the model grounded within the corpus which is the whole point of RAG.
----
+## This makes the model grounded within the corpus which is the whole point of RAG.
 
 ## 3. The relevance gate stops out-of-corpus questions
 
@@ -50,8 +51,10 @@ in at least 4 of 5 tries.
      just keep five of them, or the "4 of 5" above has nothing to be 4 of. -->
 
 **Why this target:**
+
 <!-- What did your distances look like when you set the cutoff in Milestone 4?
      Was there a clean gap, or did the two groups overlap? -->
+
 The model should not answer what is not there on Corpus or else it is just hallucinating.
 
 ---
@@ -70,13 +73,11 @@ The model should not answer what is not there on Corpus or else it is just hallu
        - "No chunk is shorter than 200 characters, since anything below that
           in my corpus turned out to be a heading with no content under it." -->
 
-The chunk and the overlap has a sync of 100 characters. This leads to chunks not cut-off.
-
+The chunk and the overlap has a sync of 10 characters. This leads to chunks not cut-off.
 
 **Why this target:**
 
 Relevant chunks lead to relevant answers. Cut off chunks would only get the model to answer the question incorrectly.
-
 
 ---
 
@@ -94,8 +95,6 @@ When I ask the model 2 semantically identical queries, the model returns the sam
 
 **Why this target:**
 The earlier models would be confused with same keywords being used in different context even though semantical context was different. I expect the model to handle such situations well.
-
-
 
 ---
 
